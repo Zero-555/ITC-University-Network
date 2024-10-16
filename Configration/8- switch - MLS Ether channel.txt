@@ -1,0 +1,13 @@
+int range gig1/0/21-23
+channel-group 2 mode active
+
+interface Port-channel 2
+switchport mode trunk
+
+exit
+
+do wr
+
+
+
+واحد active وواحد passive

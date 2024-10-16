@@ -1,0 +1,10 @@
+
+access-list RES_ACCESS EXTENDED permit udp any any eq 5246
+access-list RES_ACCESS EXTENDED permit udp any any eq 5247
+
+access-list RES_ACCESS EXTENDED permit udp any any eq 12222
+access-list RES_ACCESS EXTENDED permit udp any any eq 12223
+
+wr mem
+
+

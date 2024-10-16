@@ -1,0 +1,57 @@
+ciscoasa(config)#object network INSIDE1-OUTSIDE
+ciscoasa(config-network-object)#SUB
+ciscoasa(config-network-object)#SUBnet 192.168.10.0 255.255.255.0
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#nat (INSIDE1,OUTSIDE) dyb
+ciscoasa(config-network-object)#nat (INSIDE1,OUTSIDE) dyn
+ciscoasa(config-network-object)#nat (INSIDE1,OUTSIDE) dynamic in
+ciscoasa(config-network-object)#nat (INSIDE1,OUTSIDE) dynamic interface 
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#object network INSIDE1a-OUTSIDE
+ciscoasa(config-network-object)#SUBnet 192.168.10.0 255.255.255.0
+ciscoasa(config-network-object)#nat (INSIDE2,OUTSIDE) dynamic interface 
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#
+ciscoasa#conf t
+
+
+ciscoasa(config)#object network INSIDE2-OUTSIDE
+ciscoasa(config-network-object)#subnet 172.16.0.0 255.255.0.0
+ciscoasa(config-network-object)#nat (INSIDE1,OUTSIDE) dynamic interface 
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#object network INSIDE2a-OUTSIDE
+ciscoasa(config-network-object)#subnet 172.16.0.0 255.255.0.0
+ciscoasa(config-network-object)#nat (INSIDE2,OUTSIDE) dynamic interface 
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#conf t
+
+
+
+
+ciscoasa(config)#object network INSIDE3-OUTSIDE
+ciscoasa(config-network-object)#subnet 10.10.0.0 255.255.0.0
+ciscoasa(config-network-object)#nat (INSIDE1,OUTSIDE) dynamic interface 
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#conf t
+ciscoasa(config)#object network INSIDE3a-OUTSIDE
+ciscoasa(config-network-object)#subnet 10.10.0.0 255.255.0.0
+ciscoasa(config-network-object)#nat (INSIDE2,OUTSIDE) dynamic interface 
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#
+ciscoasa(config-network-object)#ex
+ciscoasa#
+ciscoasa#wr mem
+
+

@@ -1,0 +1,15 @@
+access-list RES_ACCESS EXTENDED permit icmp any any
+access-list RES_ACCESS EXTENDED permit udp any any eq 67
+access-list RES_ACCESS EXTENDED permit udp any any eq 68
+access-list RES_ACCESS EXTENDED permit udp any any eq 53
+access-list RES_ACCESS EXTENDED permit tcp any any eq 53
+access-list RES_ACCESS EXTENDED permit tcp any any eq 80
+access-list RES_ACCESS EXTENDED permit tcp any any eq 25
+access-list RES_ACCESS EXTENDED permit tcp any any eq 20
+access-list RES_ACCESS EXTENDED permit tcp any any eq 21
+
+access-group RES_ACCESS in interface DMZ
+access-group RES_ACCESS in interface outSIDE 
+
+wr mem
+

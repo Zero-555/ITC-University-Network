@@ -1,0 +1,15 @@
+vlan 10
+name management
+vlan 20
+name LAN
+vlan 50
+name WLAN
+
+exit
+
+int range gig1/0/2-6
+switchport mode trunk 
+
+exit
+
+do wr
